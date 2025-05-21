@@ -59,16 +59,17 @@ const Navbar = ({ animating }) => {
                         return (
                             <NavLink
                                 key={idx}
-                                onClick={() => {
-                                    console.log("Animating:", animating);
-                                    if (!animating) {
-                                        console.log(
-                                            "Navigating to",
-                                            pageDirection
-                                        );
-                                        navigate(pageDirection);
-                                    }
-                                }}
+                                to={`${pageDirection}`}
+                                // onClick={() => {
+                                //     console.log("Animating:", animating);
+                                //     if (!animating) {
+                                //         console.log(
+                                //             "Navigating to",
+                                //             pageDirection
+                                //         );
+                                //         navigate(pageDirection);
+                                //     }
+                                // }}
                                 className={({ isActive }) =>
                                     `cursor-pointer flex flex-col items-center relative group ${
                                         isActive

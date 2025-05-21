@@ -14,13 +14,13 @@ const App = () => {
         <div>
             <LenisSmoothScroll>
                 <Navbar animating={animating} />
-                <PageTransitionAnimation setAnimating={setAnimating}>
+                {/* <PageTransitionAnimation setAnimating={setAnimating}> */}
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/about/" element={<AboutPage />} />
                         <Route path="/work/" element={<WorkPage />} />
                     </Routes>
-                </PageTransitionAnimation>
+                {/* </PageTransitionAnimation> */}
                 {/* <Contact /> */}
             </LenisSmoothScroll>
         </div>
