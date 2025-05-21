@@ -35,7 +35,7 @@ const Contact = ({ mouseGoBigDivs,contactEmailRef }) => {
             <div className="w-full h-[70vh] sm:h-[75vh] flex flex-col justify-center items-center relative">
                 <div
                     ref={borderRef}
-                    className="w-full h-full border border-color-third absolute top-0 left-0 rounded-[2vw] opacity-0 pointer-events-none scale-x-[1.2] scale-y-[1.2] origin-bottom"
+                    className="w-full h-full border border-color-third absolute top-0 left-0 rounded-4xl opacity-0 pointer-events-none scale-x-[1.2] scale-y-[1.2] origin-bottom"
                 />
                 <p className="text-[8vw] sm:text-[6vw] md:text-[4vw] xl:text-[3vw] text-center font-font4 tracking-[1px]">
                     Let's create magic together
