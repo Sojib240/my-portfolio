@@ -150,8 +150,8 @@ const Work = () => {
 
             {projects.map((project, i) => (
                 <div key={i} className="">
-                    <div className="w-[10vw] h-full absolute top-0 left-0 bg-gradient-to-r from-black/50 via-transparent to-transparent z-20" />
-                    <div className="w-[10vw] h-full absolute top-0 right-0 bg-gradient-to-r from-transparent via-transparent to-black/50 z-20" />
+                    <div className="w-[10vw] h-full absolute top-0 left-0 bg-gradient-to-r from-[#0E090D]/50 via-transparent to-transparent z-20" />
+                    <div className="w-[10vw] h-full absolute top-0 right-0 bg-gradient-to-r from-transparent via-transparent to-[#0E090D]/50 z-20" />
                     <div
                         className={`flex  ${
                             [0, 2, 4].includes(i)
@@ -174,7 +174,7 @@ const Work = () => {
                                         className={`inline-flex items-center ${
                                             i !== projects.length - 1
                                                 ? "py-25 sm:py-[12vw] md:py-[10vw] lg:py-[9vw] xl:py-[7.5vw]"
-                                                : "pt-25 sm:pt-[7.5vw] md:pt-[6.5vw] lg:pt-[5.5vw] xl:pt-[4.6vw] pb-0"
+                                                : "pt-25 sm:pt-[12vw] md:pt-[10vw] lg:pt-[9vw] xl:pt-[7.5vw] pb-0"
                                         }`}
                                     >
                                         {project.title}
@@ -182,7 +182,7 @@ const Work = () => {
                                             // ref={(elem) =>
                                             //     (shapeRef.current[1] = elem)
                                             // }
-                                            className="w-[2.5vw] h-[2.5vw] bg-color-fourth mx-[3.5vw] group-hover:scale-50 easing  transition-all rounded-full"
+                                            className="w-6.5 sm:w-[5.2vw] md:w-[4.2vw] lg:w-[3.2vw] xl:w-[2.5vw] h-6.5 sm:h-[5.2vw] md:h-[4.2vw] lg:h-[3.2vw] xl:h-[2.5vw] bg-color-fourth mx-10 sm:mx-[6.5vw] md:mx-[5.5vw] lg:mx-[4.5vw] xl:mx-[3.5vw] group-hover:scale-50 easing  transition-all rounded-full"
                                         >
                                            
                                         </span>

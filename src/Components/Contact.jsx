@@ -30,7 +30,7 @@ const Contact = ({ mouseGoBigDivs,contactEmailRef }) => {
     return (
         <section
             ref={contactMainRef}
-            className="w-full min-h-[90vh] sm:min-h-[95vh] md:min-h-screen h-full px-3.5 md:px-[5vw] lg:px-[8vw] relative z-30 text-color-primary flex justify-end items-center flex-col pb-[1vw] pt-[8vw]"
+            className="overflow-hidden w-full min-h-[90vh] sm:min-h-[95vh] md:min-h-screen h-full px-3.5 md:px-[5vw] lg:px-[8vw] relative z-30 text-color-primary flex justify-end items-center flex-col pb-[1vw] pt-[8vw]"
         >
             <div className="w-full h-[70vh] sm:h-[75vh] flex flex-col justify-center items-center relative">
                 <div

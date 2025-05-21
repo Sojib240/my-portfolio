@@ -132,14 +132,14 @@ const App = () => {
             {/* mouse */}
             <div
                 ref={outerRef}
-                className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[99] border border-color-fifth flex justify-center items-center p-1"
+                className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[99] border border-color-fifth flex justify-center items-center p-1 invisible lg:visible opacity-0 lg:opacity-100"
                 style={{ transform: "translate(-50%, -50%) scale(1)" }}
             >
                 <div
                     ref={innerRef}
                     className="pointer-events-none opacity-0 w-full h-full text-color-primary p-1 glass flex flex-col justify-center items-center"
                 >
-                    <p ref={innerViewRef} className="font-font1 opacity-0 absolute">View</p>
+                    <p ref={innerViewRef} className="font-font1 opacity-0 absolute font-semibold">View</p>
                     <p ref={innerEmailRef} className="font-font1 opacity-0 absolute">Email</p>
                 </div>
             </div>

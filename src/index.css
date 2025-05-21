@@ -22,9 +22,9 @@
 
 
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-}
+} */
 
 @theme {
     --font-font1: "font1", "sans-serif";
