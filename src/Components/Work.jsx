@@ -131,7 +131,7 @@ const Work = () => {
     return (
         <div
             ref={workMainRef}
-            className="w-full text-color-primary px-[3vw] relative mb-[8vw] z-50 overflow-hidden"
+            className="w-full text-color-primary px-3.5 md:px-[5vw] lg:px-[4vw] relative mb-[8vw] z-50 overflow-hidden"
         >
             {/*  */}
             <div
@@ -165,7 +165,7 @@ const Work = () => {
                                 projectHoverOpacityEnter(i, project)
                             }
                             onMouseLeave={projectHoverOpacityLeave}
-                            className={`font-font3 text-[20vw] sm:text-[16vw] md:text-[14vw] lg:text-[12vw] xl:text-[10vw] 2xl:text-[8.5vw] whitespace-nowrap select-none cursor-pointer group`}
+                            className={`font-font3 text-8xl sm:text-[16vw] md:text-[14vw] lg:text-[12vw] xl:text-[10vw] 2xl:text-[8.5vw] whitespace-nowrap select-none cursor-pointer group`}
                         >
                             {Array.from({ length: project.repeat }).map(
                                 (_, j) => (
@@ -173,8 +173,8 @@ const Work = () => {
                                         key={j}
                                         className={`inline-flex items-center ${
                                             i !== projects.length - 1
-                                                ? "py-[10vw] sm:py-[7.5vw] md:py-[6.5vw] lg:py-[5.5vw] xl:py-[4.6vw]"
-                                                : "pt-[4.6vw] pb-0"
+                                                ? "py-25 sm:py-[12vw] md:py-[10vw] lg:py-[9vw] xl:py-[7.5vw]"
+                                                : "pt-25 sm:pt-[7.5vw] md:pt-[6.5vw] lg:pt-[5.5vw] xl:pt-[4.6vw] pb-0"
                                         }`}
                                     >
                                         {project.title}

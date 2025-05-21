@@ -80,3 +80,10 @@ body {
         transform: scale(3);
     }
 }
+
+.glass {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50%;
+}

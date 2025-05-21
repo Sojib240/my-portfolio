@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const Navbar = ({ animating }) => {
+const Navbar = ({ animating, mouseGoBigDivs }) => {
     const [navbarScroll, setnavbarScroll] = useState(true);
 
     useEffect(() => {
@@ -39,11 +39,12 @@ const Navbar = ({ animating }) => {
         <div className="">
             {/* top */}
             <div
-                className={`fixed top-0 flex justify-between items-center w-full z-[998] px-6 md:px-[5vw] lg:px-[4vw] py-8 md:py-[5vw] lg:py-[3.5vw] xl:py-[3vw] 2xl:py-[2.5vw] text-color-primary ${
+                className={`fixed top-0 flex justify-between items-center w-full z-[9999] px-3.5 md:px-[5vw] lg:px-[4vw] py-8 md:py-[5vw] lg:py-[3.5vw] xl:py-[3vw] 2xl:py-[2.5vw] text-color-primary ${
                     navbarScroll ? "translate-y-0" : "-translate-y-full"
                 } custom-easing`}
             >
                 <NavLink
+                    ref={(el) => (mouseGoBigDivs.current[3] = el)}
                     to={"/"}
                     className="flex flex-col h-[20px] md:h-[25px] lg:h-[25px] xl:h-[29px] 2xl:h-[30px] leading-[100%]  overflow-hidden group uppercase logo text-2xl md:text-3xl xl:text-4xl tracking-[2px] font-font5"
                 >
@@ -60,6 +61,7 @@ const Navbar = ({ animating }) => {
                             <NavLink
                                 key={idx}
                                 to={`${pageDirection}`}
+                                ref={(el) => (mouseGoBigDivs.current[idx] = el)}
                                 // onClick={() => {
                                 //     console.log("Animating:", animating);
                                 //     if (!animating) {
@@ -80,7 +82,7 @@ const Navbar = ({ animating }) => {
                             >
                                 {({ isActive }) => (
                                     <>
-                                        <div className="flex flex-col h-5 leading-[100%] capitalize overflow-hidden mb-2">
+                                        <div className="flex flex-col h-4 lg:h-5 leading-[100%] capitalize overflow-hidden mb-2">
                                             <span className="group-hover:-translate-y-[100%] easing">
                                                 {title}
                                             </span>
@@ -90,10 +92,10 @@ const Navbar = ({ animating }) => {
                                         </div>
 
                                         <span
-                                            className={`w-1 h-1 rounded-full block  transition-opacity duration-200 absolute -bottom-1.5 left-1/2 -translate-x-1/2 ${
+                                            className={`w-1 h-1 rounded-full block  transition-opacity easing absolute -bottom-1.5 left-1/2 -translate-x-1/2 ${
                                                 isActive
-                                                    ? "bg-color-fourth"
-                                                    : "hidden"
+                                                    ? "bg-color-fourth translate-y-0 opacity-100 pointer-events-auto"
+                                                    : "translate-y-2 opacity-0 pointer-events-none"
                                             }`}
                                         />
                                     </>

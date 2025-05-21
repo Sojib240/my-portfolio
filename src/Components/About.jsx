@@ -3,7 +3,7 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
-const About = () => {
+const About = ({ mouseGoBigDivs }) => {
     const aboutMainRef = useRef();
     const introRef = useRef();
     useGSAP(() => {
@@ -35,13 +35,13 @@ const About = () => {
     return (
         <section
             ref={aboutMainRef}
-            className="about w-full h-auto px-6 md:px-[2vw] relative pt-20 sm:pt-[14vw] md:pt-[8vw] mb-[13vw]"
+            className="about w-full h-auto px-3.5 md:px-[5vw] lg:px-[4vw] relative pt-20 sm:pt-[14vw] md:pt-[8vw] mb-55  sm:mb-[20vw] lg:mb-[16vw] xl:mb-[14vw]"
         >
             <div
                 ref={introRef}
                 className=" w-full h-full flex justify-center items-center gap-10"
             >
-                <div className="text-[25px] sm:text-[4vw] md:text-[3.6vw] lg:text-[3.2vw] xl:text-[2.8vw] 2xl:text-[2.5vw] w-full md:w-[82%] lg:w-[76%] xl:w-[68%] 2xl:w-[64%] font-font1 overflow-hidden leading-[130%]">
+                <div className=" text-[25px] sm:text-[4vw] md:text-[3.6vw] lg:text-[3.2vw] xl:text-[2.8vw] 2xl:text-[2.5vw] w-full md:w-[82%] lg:w-[76%] xl:w-[68%] 2xl:w-[64%] font-font1 overflow-hidden leading-[130%]">
                     {"I'm Mejbaul Alom Sojib, a Frontend Developer from Bogura, Bangladesh, with 1.5 years of experience building responsive, animated interfaces using React, Tailwind CSS, GSAP, and Framer Motion. I focus on clean code, smooth interactions, and creating visually engaging, user-friendly web experiences."
                         .split("")
                         .map((c, i) => {
@@ -61,6 +61,7 @@ const About = () => {
                 </div>
             </div>
             <Link
+                ref={(el) => (mouseGoBigDivs.current[4] = el)}
                 to={"/about"}
                 className="flex items-center gap-4 justify-center mt-8 md:mt-12 lg:mt-14 xl:mt-18 font-font1 text-color-primary text-base lg:text-lg 2xl:text-xl w-max mx-auto group relative pl-5.5 md:pl-7 p-2"
             >
@@ -71,7 +72,7 @@ const About = () => {
                         alt=""
                     />
                 </span>
-                <div className="flex flex-col h-[19px] leading-[100%]  overflow-hidden">
+                <div className="flex flex-col h-[18px] lg:h-[19px] leading-[100%]  overflow-hidden">
                     <span className="group-hover:-translate-y-[100%] easing">
                         Learn more
                     </span>

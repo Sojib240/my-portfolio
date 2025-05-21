@@ -19,7 +19,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-            <Contact />
+            {/* <Contact /> */}
         </>
     );
 };

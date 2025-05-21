@@ -56,7 +56,7 @@ const WorkPage = () => {
                 </div>
             </section>
             <Work />
-            <Contact />
+            {/* <Contact /> */}
         </>
     );
 };
