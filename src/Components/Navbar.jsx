@@ -39,7 +39,7 @@ const Navbar = ({ animating, mouseGoBigDivs }) => {
         <div className="">
             {/* top */}
             <div
-                className={`fixed top-0 flex justify-between items-center w-full z-[9999] px-3.5 md:px-[5vw] lg:px-[4vw] py-8 md:py-[5vw] lg:py-[3.5vw] xl:py-[3vw] 2xl:py-[2.5vw] text-color-primary ${
+                className={`fixed top-0 flex justify-between items-center w-full z-[9999] px-3.5 md:px-[5vw] lg:px-[4vw] h-20 md:h-30  text-color-primary ${
                     navbarScroll ? "translate-y-0" : "-translate-y-full"
                 } custom-easing`}
             >

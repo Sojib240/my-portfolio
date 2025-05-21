@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import MouseFoller from "./Components/MouseFoller";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ProjectDetails from "./Pages/ProjectDetails";
 
 const App = () => {
     const [animating, setAnimating] = useState(true);
@@ -139,8 +140,18 @@ const App = () => {
                     ref={innerRef}
                     className="pointer-events-none opacity-0 w-full h-full text-color-primary p-1 glass flex flex-col justify-center items-center"
                 >
-                    <p ref={innerViewRef} className="font-font1 opacity-0 absolute font-semibold">View</p>
-                    <p ref={innerEmailRef} className="font-font1 opacity-0 absolute">Email</p>
+                    <p
+                        ref={innerViewRef}
+                        className="font-font1 opacity-0 absolute font-semibold"
+                    >
+                        View
+                    </p>
+                    <p
+                        ref={innerEmailRef}
+                        className="font-font1 opacity-0 absolute"
+                    >
+                        Email
+                    </p>
                 </div>
             </div>
             {/*  */}
@@ -154,6 +165,7 @@ const App = () => {
                     />
                     <Route path="/about/" element={<AboutPage />} />
                     <Route path="/work/" element={<WorkPage />} />
+                    <Route path="/details/" element={<ProjectDetails />} />
                 </Routes>
                 {/* </PageTransitionAnimation> */}
                 <Contact

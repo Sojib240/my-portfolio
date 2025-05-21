@@ -2,37 +2,40 @@ import { useGSAP } from "@gsap/react";
 import { image } from "framer-motion/client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { NewsContext } from "../Utils/Context";
+import { Link } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
+    const [projectData] = useContext(NewsContext);
     const projectSlideRef = useRef([]);
-    const projects = [
-        {
-            id: 1,
-            title: "Russian mockups",
-            repeat: 7,
-            src: "https://images.unsplash.com/photo-1747599309107-20504ba6b8dd?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-            id: 2,
-            title: "Tea flow",
-            repeat: 12,
-            src: "https://images.unsplash.com/photo-1741096931224-1306957b38ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
-        },
-        {
-            id: 3,
-            title: "Future goals",
-            repeat: 9,
-            src: "https://plus.unsplash.com/premium_photo-1675075213876-574a2a454dba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHx8",
-        },
-        {
-            id: 4,
-            title: "Sapori e natura",
-            repeat: 8,
-            src: "https://plus.unsplash.com/premium_photo-1663954136945-4be993b2714f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ3fHx8ZW58MHx8fHx8",
-        },
-    ];
+    // const projects = [
+    //     {
+    //         id: 1,
+    //         title: "Russian mockups",
+    //         repeat: 7,
+    //         src: "https://images.unsplash.com/photo-1747599309107-20504ba6b8dd?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Tea flow",
+    //         repeat: 12,
+    //         src: "https://images.unsplash.com/photo-1741096931224-1306957b38ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Future goals",
+    //         repeat: 9,
+    //         src: "https://plus.unsplash.com/premium_photo-1675075213876-574a2a454dba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIwfHx8ZW58MHx8fHx8",
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "Sapori e natura",
+    //         repeat: 8,
+    //         src: "https://plus.unsplash.com/premium_photo-1663954136945-4be993b2714f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ3fHx8ZW58MHx8fHx8",
+    //     },
+    // ];
 
     useGSAP(() => {
         projectSlideRef.current.forEach((el, i) => {
@@ -127,7 +130,6 @@ const Work = () => {
     //     };
     // }, []);
 
-
     return (
         <div
             ref={workMainRef}
@@ -148,11 +150,11 @@ const Work = () => {
             {/*  */}
             <span className="w-full h-[1px] bg-color-third mb-5 block" />
 
-            {projects.map((project, i) => (
+            {projectData.map((project, i) => (
                 <div key={i} className="">
                     <div className="w-[10vw] h-full absolute top-0 left-0 bg-gradient-to-r from-[#0E090D]/50 via-transparent to-transparent z-20" />
                     <div className="w-[10vw] h-full absolute top-0 right-0 bg-gradient-to-r from-transparent via-transparent to-[#0E090D]/50 z-20" />
-                    <div
+                    <Link to={'/details/'}
                         className={`flex  ${
                             [0, 2, 4].includes(i)
                                 ? "justify-start"
@@ -167,12 +169,12 @@ const Work = () => {
                             onMouseLeave={projectHoverOpacityLeave}
                             className={`font-font3 text-8xl sm:text-[16vw] md:text-[14vw] lg:text-[12vw] xl:text-[10vw] 2xl:text-[8.5vw] whitespace-nowrap select-none cursor-pointer group`}
                         >
-                            {Array.from({ length: project.repeat }).map(
+                            {Array.from({ length: 10 }).map(
                                 (_, j) => (
                                     <span
                                         key={j}
                                         className={`inline-flex items-center ${
-                                            i !== projects.length - 1
+                                            i !== projectData.length - 1
                                                 ? "py-25 sm:py-[12vw] md:py-[10vw] lg:py-[9vw] xl:py-[7.5vw]"
                                                 : "pt-25 sm:pt-[12vw] md:pt-[10vw] lg:pt-[9vw] xl:pt-[7.5vw] pb-0"
                                         }`}
@@ -183,14 +185,12 @@ const Work = () => {
                                             //     (shapeRef.current[1] = elem)
                                             // }
                                             className="w-6.5 sm:w-[5.2vw] md:w-[4.2vw] lg:w-[3.2vw] xl:w-[2.5vw] h-6.5 sm:h-[5.2vw] md:h-[4.2vw] lg:h-[3.2vw] xl:h-[2.5vw] bg-color-fourth mx-10 sm:mx-[6.5vw] md:mx-[5.5vw] lg:mx-[4.5vw] xl:mx-[3.5vw] group-hover:scale-50 easing  transition-all rounded-full"
-                                        >
-                                           
-                                        </span>
+                                        ></span>
                                     </span>
                                 )
                             )}
                         </div>
-                    </div>
+                    </Link>
 
                     {[0, 1, 2].includes(i) && (
                         <div className="flex items-center gap-5 leading-0">
